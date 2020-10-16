@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct BookList: View {
+
+    @ObservedObject var viewModel = BookListViewModel()
+
     var body: some View {
-        List([Book].dummyData) { item in
+        List(viewModel.books) { item in
             Text(item.title)
         }
     }
