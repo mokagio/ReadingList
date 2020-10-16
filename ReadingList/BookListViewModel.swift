@@ -2,5 +2,5 @@ import Combine
 
 class BookListViewModel: ObservableObject {
 
-    @Published var books = [Book].dummyData
+    @Published var books = [Book].dummyAllBooks
 }

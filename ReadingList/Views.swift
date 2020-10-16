@@ -11,6 +11,17 @@ struct BookList: View {
     }
 }
 
+struct ToReadList: View {
+
+    @ObservedObject var viewModel = ToReadListViewModel()
+
+    var body: some View {
+        List(viewModel.books) { item in
+            Text(item.title)
+        }
+    }
+}
+
 #if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

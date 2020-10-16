@@ -6,8 +6,14 @@ struct ReadingListApp: App {
         WindowGroup {
             TabView {
                 NavigationView {
+                    ToReadList()
+                        .navigationTitle("To Read 📖")
+                }
+                .tabItem { Text("To Read") }
+
+                NavigationView {
                     BookList()
-                        .navigationTitle("Book 📚")
+                        .navigationTitle("Books 📚")
                 }
                 .tabItem { Text("All Books") }
             }
