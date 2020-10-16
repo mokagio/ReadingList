@@ -4,7 +4,7 @@ import SwiftUI
 struct ReadingListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BookList()
         }
     }
 }

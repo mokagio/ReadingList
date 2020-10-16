@@ -7,9 +7,14 @@ struct Book {
     let author: String
 }
 
+extension Book: Identifiable {
+
+    var id: String { title + author }
+}
+
 extension Array where Element == Book {
 
-    var dummyData: [Book] {
+    static var dummyData: [Book] {
         [
             Book(title: "Humans", author: "Brandon Stanton"),
             Book(title: "It This Anything?", author: "Jerry Seinfield"),
