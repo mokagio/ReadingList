@@ -14,6 +14,7 @@
 		3F3A1AE325393B0400FEC663 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A1AE225393B0400FEC663 /* Book.swift */; };
 		3F3A1AEE25393D7100FEC663 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3A1AED25393D7100FEC663 /* BookListViewModel.swift */; };
 		3F5BB87325393E88009F28D8 /* ToReadListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BB87225393E88009F28D8 /* ToReadListViewModel.swift */; };
+		3F5BB87B25394011009F28D8 /* BookToRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BB87A25394011009F28D8 /* BookToRead.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3F3A1AE225393B0400FEC663 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		3F3A1AED25393D7100FEC663 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
 		3F5BB87225393E88009F28D8 /* ToReadListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToReadListViewModel.swift; sourceTree = "<group>"; };
+		3F5BB87A25394011009F28D8 /* BookToRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookToRead.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				3F3A1AAE2539397C00FEC663 /* ReadingListApp.swift */,
+				3F5BB87A25394011009F28D8 /* BookToRead.swift */,
 				3F3A1AB02539397C00FEC663 /* Views.swift */,
 				3F5BB87225393E88009F28D8 /* ToReadListViewModel.swift */,
 				3F3A1AED25393D7100FEC663 /* BookListViewModel.swift */,
@@ -267,6 +270,7 @@
 				3F5BB87325393E88009F28D8 /* ToReadListViewModel.swift in Sources */,
 				3F3A1AE325393B0400FEC663 /* Book.swift in Sources */,
 				3F3A1AAF2539397C00FEC663 /* ReadingListApp.swift in Sources */,
+				3F5BB87B25394011009F28D8 /* BookToRead.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

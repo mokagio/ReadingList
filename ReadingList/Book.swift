@@ -14,19 +14,27 @@ extension Book: Identifiable {
 
 extension Array where Element == Book {
 
+    static var humans: Book {
+        Book(title: "Humans", author: "Brandon Stanton")
+    }
+
+    static var rage: Book {
+        Book(title: "Rage", author: "Bob Woodward")
+    }
+
     static var dummyAllBooks: [Book] {
         [
-            Book(title: "Humans", author: "Brandon Stanton"),
+            humans,
             Book(title: "It This Anything?", author: "Jerry Seinfield"),
             Book(title: "The 99% Invisible City", author: "Roman Mars"),
-            Book(title: "Rage", author: "Bob Woodward"),
+            rage
         ]
     }
 
-    static var dummyFavorites: [Book] {
+    static var dummyFavorites: [BookToRead] {
         [
-            Book(title: "Humans", author: "Brandon Stanton"),
-            Book(title: "Rage", author: "Bob Woodward"),
+            BookToRead(book: humans, added: Date()),
+            BookToRead(book: rage, added: Date().addingTimeInterval(-7 * 24 * 60 * 60)),
         ]
     }
 }

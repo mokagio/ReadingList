@@ -17,7 +17,10 @@ struct ToReadList: View {
 
     var body: some View {
         List(viewModel.books) { item in
-            Text(item.title)
+            VStack(alignment: .leading) {
+                Text(item.book.title).bold()
+                Text("Added: \(item.added)")
+            }
         }
     }
 }
