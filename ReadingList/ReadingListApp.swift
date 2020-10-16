@@ -4,7 +4,13 @@ import SwiftUI
 struct ReadingListApp: App {
     var body: some Scene {
         WindowGroup {
-            BookList()
+            TabView {
+                NavigationView {
+                    BookList()
+                        .navigationTitle("Book 📚")
+                }
+                .tabItem { Text("All Books") }
+            }
         }
     }
 }
