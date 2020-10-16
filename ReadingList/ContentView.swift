@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  ReadingList
-//
-//  Created by Gio on 16/10/20.
-//
-
 import SwiftUI
 
 struct ContentView: View {
