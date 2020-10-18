@@ -17,6 +17,7 @@
 		3F5BB87B25394011009F28D8 /* BookToRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BB87A25394011009F28D8 /* BookToRead.swift */; };
 		3F5BB880253BDD16009F28D8 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BB87F253BDD16009F28D8 /* BookDetailViewModel.swift */; };
 		3F5BB885253BDD4C009F28D8 /* ReadingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BB884253BDD4C009F28D8 /* ReadingListController.swift */; };
+		3F5BB88A253BDDA9009F28D8 /* BookDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5BB889253BDDA9009F28D8 /* BookDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3F5BB87A25394011009F28D8 /* BookToRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookToRead.swift; sourceTree = "<group>"; };
 		3F5BB87F253BDD16009F28D8 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
 		3F5BB884253BDD4C009F28D8 /* ReadingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListController.swift; sourceTree = "<group>"; };
+		3F5BB889253BDDA9009F28D8 /* BookDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				3F3A1AC22539397D00FEC663 /* Info.plist */,
+				3F5BB889253BDDA9009F28D8 /* BookDetailViewModelTests.swift */,
 			);
 			path = ReadingListTests;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 					};
 					3F3A1ABB2539397D00FEC663 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 						TestTargetID = 3F3A1AAA2539397C00FEC663;
 					};
 					3F3A1AC62539397D00FEC663 = {
@@ -286,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F5BB88A253BDDA9009F28D8 /* BookDetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +480,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReadingListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -485,6 +491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = examples.mokagio.ReadingListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadingList.app/ReadingList";
@@ -496,6 +503,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReadingListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
