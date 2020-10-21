@@ -8,9 +8,13 @@ class RootViewModel {
         return BookListViewModel(
             books: [Book].dummyAllBooks,
             viewForSelectedBook: { [unowned self] in
-                BookDetail(viewModel: .init(book: $0, readingListController: readingListController))
+                BookDetail(viewModel: self.makeBookDetailViewModel(for: $0))
             }
         )
+    }
+
+    func makeBookDetailViewModel(for book: Book) -> BookDetailViewModel {
+        return BookDetailViewModel(book: book, readingListController: readingListController)
     }
 
     func makeToReadListViewModel() -> ToReadListViewModel {
