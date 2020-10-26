@@ -5,7 +5,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    let viewModel = RootViewModel()
+    let readingListController = ReadingListController()
 
     func scene(
         _ scene: UIScene,
@@ -19,17 +19,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let view = TabView {
             NavigationView {
-                ToReadList(viewModel: viewModel.makeToReadListViewModel())
+                ToReadList()
                     .navigationTitle("To Read 📖")
             }
             .tabItem { Text("To Read") }
 
             NavigationView {
-                BookList(viewModel: viewModel.makeBookListViewModel())
+                BookList(books: [Book].dummyAllBooks)
                     .navigationTitle("Books 📚")
             }
             .tabItem { Text("All Books") }
         }
+        .environmentObject(readingListController)
 
         window?.rootViewController = UIHostingController(rootView: view)
         window?.makeKeyAndVisible()

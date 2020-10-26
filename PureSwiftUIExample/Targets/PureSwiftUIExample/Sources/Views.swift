@@ -2,11 +2,11 @@ import SwiftUI
 
 struct BookList: View {
 
-    @ObservedObject var viewModel: BookListViewModel
+    let books: [Book]
 
     var body: some View {
-        List(viewModel.books) { item in
-            NavigationLink(destination: viewModel.viewForSelectedBook(item)) {
+        List(books) { item in
+            NavigationLink(destination: BookDetail(book: item)) {
                 Text(item.title)
             }
         }
@@ -15,10 +15,10 @@ struct BookList: View {
 
 struct ToReadList: View {
 
-    @ObservedObject var viewModel: ToReadListViewModel
+    @EnvironmentObject var readingListController: ReadingListController
 
     var body: some View {
-        List(viewModel.books) { item in
+        List(readingListController.readingList) { item in
             VStack(alignment: .leading) {
                 Text(item.book.title).bold()
                 Text("Added: \(item.added)")
@@ -29,14 +29,21 @@ struct ToReadList: View {
 
 struct BookDetail: View {
 
-    @ObservedObject var viewModel: BookDetailViewModel
+    let book: Book
+    @EnvironmentObject var readingListController: ReadingListController
 
     var body: some View {
         VStack {
-            Text(viewModel.title)
-            Text(viewModel.authors)
-            Button(action: viewModel.addOrRemoveBook) {
-                Text(viewModel.addOrRemoveButtonText)
+            Text(book.title)
+            Text(book.author)
+            if readingListController.isBookInList(book) {
+                Button(action: { self.readingListController.remove(book) }) {
+                    Text("Remove from reading list")
+                }
+            } else {
+                Button(action: { self.readingListController.add(book) }) {
+                    Text("Add to reading list")
+                }
             }
         }
     }
