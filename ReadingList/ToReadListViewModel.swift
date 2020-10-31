@@ -9,6 +9,8 @@ class ToReadListViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init(readingListController: ReadingListController) {
+        print("ToReadListViewModel - Init")
+        
         self.readingListController = readingListController
 
         books = readingListController.readingList

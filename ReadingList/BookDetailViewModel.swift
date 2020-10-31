@@ -10,6 +10,8 @@ class BookDetailViewModel: ObservableObject {
     private let readingListController: ReadingListController
 
     init(book: Book, readingListController: ReadingListController) {
+        print("BookDetailViewModel - Init")
+        
         title = book.title
         authors = book.author // TODO: Join authors
         self.book = book

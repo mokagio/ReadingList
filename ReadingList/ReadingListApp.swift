@@ -26,20 +26,37 @@ class RootViewModel {
 struct ReadingListApp: App {
 
     let viewModel = RootViewModel()
-
+    
+    // Let's introduce a reason to redraw, to have the `body` var called again by SwiftUI engine
+    @State var state: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            TabView {
-                NavigationView {
-                    ToReadList(viewModel: viewModel.makeToReadListViewModel())
-                        .navigationTitle("To Read 📖")
+            VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        self.state.toggle()
+                    } label: {
+                        Text("Simulate state change to cause redraw")
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
                 }
-                .tabItem { Text("To Read") }
+                .background(state ? Color.blue : Color.yellow)
+                
+                TabView {
+                    NavigationView {
+                        ToReadList(viewModel: viewModel.makeToReadListViewModel())
+                            .navigationTitle("To Read 📖")
+                    }
+                    .tabItem { Text("To Read") }
 
-                NavigationView {
-                    BookList(viewModel: viewModel.makeBookListViewModel())                       .navigationTitle("Books 📚")
+                    NavigationView {
+                        BookList(viewModel: viewModel.makeBookListViewModel())                       .navigationTitle("Books 📚")
+                    }
+                    .tabItem { Text("All Books") }
                 }
-                .tabItem { Text("All Books") }
             }
         }
     }
