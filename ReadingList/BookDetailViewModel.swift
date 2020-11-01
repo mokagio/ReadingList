@@ -14,6 +14,9 @@ class BookDetailViewModel: ObservableObject {
         authors = book.author // TODO: Join authors
         self.book = book
         self.readingListController = readingListController
+
+        // This method is defined in a private extension below to DRY the code without having to
+        // define a static function that could be accessed here when self is not yet available.
         addOrRemoveButtonText = readingListController.textForAddOrRemoveButton(for: book)
     }
 
