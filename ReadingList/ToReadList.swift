@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ToReadList: View {
 
-    @ObservedObject var viewModel: ToReadListViewModel
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         List(viewModel.books) { item in

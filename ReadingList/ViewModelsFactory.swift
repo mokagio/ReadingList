@@ -2,8 +2,8 @@ class ViewModelFactory {
 
     let readingListController = ReadingListController()
 
-    func makeBookListViewModel() -> BookListViewModel {
-        return BookListViewModel(
+    func makeBookListViewModel() -> BookList.ViewModel {
+        return BookList.ViewModel(
             books: [Book].dummyAllBooks,
             viewForSelectedBook: { [unowned self] in
                 BookDetail(viewModel: self.makeBookDetailViewModel(for: $0))
@@ -11,11 +11,11 @@ class ViewModelFactory {
         )
     }
 
-    func makeBookDetailViewModel(for book: Book) -> BookDetailViewModel {
-        return BookDetailViewModel(book: book, readingListController: readingListController)
+    func makeBookDetailViewModel(for book: Book) -> BookDetail.ViewModel {
+        return BookDetail.ViewModel(book: book, readingListController: readingListController)
     }
 
-    func makeToReadListViewModel() -> ToReadListViewModel {
-        return ToReadListViewModel(readingListController: readingListController)
+    func makeToReadListViewModel() -> ToReadList.ViewModel {
+        return ToReadList.ViewModel(readingListController: readingListController)
     }
 }

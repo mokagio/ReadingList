@@ -10,7 +10,7 @@ class BookDetailViewModelTests: XCTestCase {
     func testAddOrRemoveButtonTitleIsAddWhenBookIsNotInReadingList() {
         let controller = ReadingListController()
         let book = dummyBook
-        let viewModel = BookDetailViewModel(book: book, readingListController: controller)
+        let viewModel = BookDetail.ViewModel(book: book, readingListController: controller)
 
         XCTAssertFalse(controller.isBookInList(book))
         XCTAssertEqual(viewModel.addOrRemoveButtonText, "Add to reading list")
@@ -22,7 +22,7 @@ class BookDetailViewModelTests: XCTestCase {
         controller.add(book)
         XCTAssertTrue(controller.isBookInList(book))
 
-        let viewModel = BookDetailViewModel(book: book, readingListController: controller)
+        let viewModel = BookDetail.ViewModel(book: book, readingListController: controller)
 
         XCTAssertEqual(viewModel.addOrRemoveButtonText, "Remove from reading list")
     }

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct BookDetail: View {
 
-    @ObservedObject var viewModel: BookDetailViewModel
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack {
